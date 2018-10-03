@@ -41,9 +41,7 @@ class CustomerController extends Controller
         $customer->user_name = $request->input('user_name');
         $customer->phone = $request->input('phone');
         $customer->email = $request->input('email');
-
         $customer->save();
-
         return redirect()->route('customer_list');
     }
 
@@ -67,7 +65,6 @@ class CustomerController extends Controller
     public function edit($id)
     {
         $customer = Customer::find($id);
-
         return view('customer.updata', compact('customer'));
     }
 
@@ -85,7 +82,6 @@ class CustomerController extends Controller
         $customer->phone = $request->input('phone');
         $customer->email = $request->input('email');
         $customer->save();
-
         return redirect()->route('customer_list');
 
     }
@@ -98,7 +94,6 @@ class CustomerController extends Controller
      */
     public function delete($id)
     {
-
         $customer = Customer::find($id);
         $customer->delete();
         return redirect()->route('customer_list');
