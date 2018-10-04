@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatCustomerRequest;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,7 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatCustomerRequest $request)
     {
         $customer = new Customer;
         $customer->user_name = $request->input('user_name');

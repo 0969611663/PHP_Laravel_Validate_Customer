@@ -65,7 +65,7 @@
             List
         </div>
         <div class="links">
-            <a href="{{ Route('customer_list') }}">Customer</a>
+            <a href="{{ route('customer_list') }}">Customer</a>
         </div>
     </div>
 </div>
