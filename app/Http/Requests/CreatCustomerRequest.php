@@ -24,18 +24,18 @@ class CreatCustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_name' => 'required|min:5|max:50',
-            'phone' => 'required|integer|min:10|max:11',
-//            'email' => 'required|exists:connection.staff,email'
+            'user_name' => 'required|min:2|max:50',
+            'phone' => 'min:10|max:11|required',
+            'email' => 'required|email'
         ];
     }
 
     public function messages()
     {
         return [
-            'user_name.required' => 'nhap sai ten can nhap lai',
-            'phone.required'  => 'nhap sai sdt nhap lai',
-//            'email.required'  => 'nhap sai email can nhap lai'
+            'user_name.required' => 'ban chua nhap ten can nhap lai',
+            'phone.required'  => 'ban chua nhap sdt can nhap lai',
+            'email.required'  => 'ban chua nhap email can nhap lai'
         ];
     }
 }
