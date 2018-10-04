@@ -24,8 +24,8 @@ class CreatCustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_name' => 'required|max:50',
-//            'phone' => 'required|max:11',
+            'user_name' => 'required|min:5|max:50',
+            'phone' => 'required|integer|min:10|max:11',
 //            'email' => 'required|exists:connection.staff,email'
         ];
     }
@@ -34,7 +34,7 @@ class CreatCustomerRequest extends FormRequest
     {
         return [
             'user_name.required' => 'nhap sai ten can nhap lai',
-//            'phone.required'  => 'nhap sai sdt nhap lai',
+            'phone.required'  => 'nhap sai sdt nhap lai',
 //            'email.required'  => 'nhap sai email can nhap lai'
         ];
     }
